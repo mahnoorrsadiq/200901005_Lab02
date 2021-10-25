@@ -1,0 +1,23 @@
+#200901005
+#Mahnoor Sadiq
+#Task 02
+from collections import deque
+d=deque()
+
+d.append(10)
+d.append(20)
+d.append(30)
+d.append(40)
+print(d)
+
+d.appendleft(50)
+print(d)
+
+d.pop()
+print(d)
+
+d.popleft()
+print(d)
+
+d.clear()
+print(d)
