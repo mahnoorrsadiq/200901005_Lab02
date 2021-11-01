@@ -1,0 +1,71 @@
+class node:
+  def __init__(self,data=None):
+    self.data=data
+    self.next=None
+    print("Node is created")
+    
+class LinkedList:
+   def __init__(self):
+     self.head=node()   
+     print("Head is initilizied")
+
+   # APPEND AT INDEX FUNCTION
+   def append_at_index(self, newElement, index):   
+     new_node = node(newElement) 
+     if(index < 1):
+       print("Enter a valid position")
+     elif (index == 1):
+       new_node.next = self.head
+       self.head = new_node
+     else:    
+       temp = self.head
+     for i in range(1, index-1):
+       if(temp != None):
+         temp = temp.next   
+       if(temp != None):
+         new_node.next = temp.next
+         temp.next = new_node  
+       else:
+         print("The previous node is null")
+   
+   # APPEND FUNCTION
+   def append(self,data):
+     new_node=node(data)
+     curr=self.head
+     while curr.next!=None:
+       curr = curr.next
+     curr.next=new_node
+
+   # APPEND LEFT FUNCTION
+   def append_left(self,data):
+     new_node = node(data)
+     curr=self.head
+     new_node.next = self.head
+     while curr.next!=None:
+       curr = curr.next
+     self.head = new_node
+
+   # LENGTH FUNCTION
+   def length(self):
+     curr=self.head 
+     counter=0
+     while(curr.next!=None):
+       curr=curr.next
+       counter+=1 
+     return counter
+
+   # DELETE FUNCTION
+   def delete(self):
+     curr=self.head
+     while(curr.next.next!=None):
+       curr = curr.next
+     curr.next=None
+
+   # DISPLAY FUNCTION
+   def display(self):
+      curr=self.head
+      dis=[]
+      while curr.next!=None:
+        curr = curr.next
+        dis.append(curr.data)
+      print(dis)
