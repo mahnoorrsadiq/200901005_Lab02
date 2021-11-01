@@ -69,3 +69,28 @@ class LinkedList:
         curr = curr.next
         dis.append(curr.data)
       print(dis)
+# CREATING OBJECT FOR CLASS 
+l=LinkedList()
+
+# APPENDING ELEMENTS
+l.append(1)
+l.append(2)
+l.append(3)
+l.append(4)
+l.append(5)
+
+# APPENDING ELEMENTS AT GIVEN INDEX 
+l.append_at_index(10,3)
+
+# DISPLAYING ELEMENTS 
+l.display()
+
+# DELETING ELEMENTS
+l.delete()
+l.display()
+
+# CHECKING LENGTH
+l.length()
+
+# DISPLAYING ELEMENTS
+l.display()
